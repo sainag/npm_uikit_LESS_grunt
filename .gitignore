@@ -3,3 +3,6 @@ pdf/
 
 #node modules
 node_modules/
+
+#FTP username and passwords
+.ftppass
