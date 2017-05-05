@@ -1,0 +1,304 @@
+@import "header";
+@import "footer";
+@font-face{
+  font-family: 'Roboto'; src: url('LaTrobe_MainSite_Fonts/Roboto-Light-webfont.eot');
+  src: url('/assets/LaTrobe_MainSite_Fonts/Roboto-Light-webfont.eot?iefix') format('eot'), url('/assets/LaTrobe_MainSite_Fonts/Roboto-Light-webfont.woff') format('woff'), url('/assets/LaTrobe_MainSite_Fonts/Roboto-Light-webfont.ttf') format('truetype'), url('/assets/LaTrobe_MainSite_Fonts/Roboto-Light-webfont.svg#webfont') format('svg');
+}
+@font-face{
+  font-family: 'Roboto Bold'; src: url('/assets/LaTrobe_MainSite_Fonts/RobotoCondensed-Bold-webfont.eot');
+  src: url('/assets/LaTrobe_MainSite_Fonts/RobotoCondensed-Bold-webfont.eot?iefix') format('eot'), url('/assets/LaTrobe_MainSite_Fonts/RobotoCondensed-Bold-webfont.woff') format('woff'), url('/assets/LaTrobe_MainSite_Fonts/RobotoCondensed-Bold-webfont.ttf') format('truetype'), url('/assets/LaTrobe_MainSite_Fonts/RobotoCondensed-Bold-webfont.svg#webfont') format('svg');
+}
+@bodybgcolor: #444444;
+@bodybgplanecolor:#ffffff;
+@bodyfontcolor: #ffffff;
+@latrobe_color:#d34426;
+@large_space:35px;
+@medium_space:25px;
+@subtitle_color:#ff0000;
+@button_bgcolor:#b43a20;
+@font_color:#333333;
+
+body{
+  font-family:Helvetica, Arial, sans-serif;
+  color:@bodyfontcolor;
+  background-color:@bodybgcolor;
+}
+.clrborder{
+  border:0;
+}
+.clrpadding{
+  padding:0;
+}
+.clrpadding-left{
+  padding-left:0;
+}
+.clrmargin{
+  margin:0;
+}
+.clrmargin-left{
+  margin-left:0;
+}
+.uk-slidenav-position .uk-slidenav-previous{
+  left:0;
+}
+.uk-slidenav-position .uk-slidenav-next{
+  right:0;
+}
+h1{
+  font-weight:600;
+}
+.h_divider{
+  background: @bodybgplanecolor;
+  background: -moz-linear-gradient(top,  #ffffff 0%, #e5e5e5 100%);
+  background: -webkit-linear-gradient(top,  #ffffff 0%,#e5e5e5 100%);
+  background: linear-gradient(to bottom,  #ffffff 0%,#e5e5e5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
+  height: 50px;
+}
+.c_divider{
+  border:1px solid #cccccc !important;
+  border-radius:5px;
+}
+.b_container{
+  box-shadow:0px 10px 10px 10px rgba(0, 0, 0, 0.35);
+  background-color:@bodybgplanecolor;
+}
+.eb-acc-bgcolor{
+  background-color: #f8f8f8;
+}
+.ebcolour{
+  color:@subtitle_color;
+}
+.ebpadding-left{
+  padding-left:@large_space;
+}
+.ebpadding-medium-left{
+  padding-left:@medium_space;
+}
+.ebpadding-right{
+  padding-right:@large_space;
+}
+.clrbgcolour{
+  background:none;
+}
+.clrmaxheight{
+  max-height: none !important;
+}
+.book-title{
+  font-weight: 500;
+}
+.book-author{
+  color:@subtitle_color;
+}
+.download_pdf{
+  background-color:@button_bgcolor;
+}
+.view_book i{
+  color:@button_bgcolor;
+}
+.uk-panel-title h3{
+  min-height: 80px;
+}
+/*******************Start - Slideshow***************************************************/
+.uk-slider-container img{
+  max-height:400px;
+}
+.uk-slidenav-contrast,.uk-slidenav-contrast:hover{
+  color:rgba(1,1,1,0.5);
+}
+.eb-oa-div{
+  background-color:#d43326;
+}
+.eb-st-slide{
+  background-color: @bodybgplanecolor;
+}
+.eb-staff-promo{
+  background-color: @bodybgplanecolor;
+}
+.eb-st-div{
+  background-color: #2d251a;
+}
+.eb-staff-div{
+  background-color: #d43326;
+}
+.eb-sc-slide{
+  background-color: #ff9e1b;
+}
+.eb-gp-slide{
+  background-color: #648a19;
+}
+.slide-content-div{
+  position: absolute;
+  margin: auto;
+  height: 220px;
+  top: 0;
+  bottom: 0;
+  margin-bottom: nonne !important;
+  margin-left:8px;
+}
+.slide-content-div-750{
+  position: relative;
+  margin-left:0;
+}
+.slide-title{
+  font-size:50px;
+  line-height: 50px;
+}
+.slide-title-900, .slide-title-750{
+  font-size:24px;
+  line-height: 24px;
+}
+.slide-title-padding{
+  padding:30px 30px 0px;
+}
+#eb-oa-content-div{
+  .slide-content-div;
+  height: 190px;
+  h2{
+    .slide-title;
+  }
+  @media (max-width: 900px) {
+    height:80px;
+    h2{
+      .slide-title-900;
+    }
+  }
+  @media (max-width: 750px) {
+    .slide-content-div-750;
+    height: 80px;
+    h2{
+      .slide-title-750;
+      line-height: 30px;
+    }
+  }
+}
+#eb-st-content-div{
+  .slide-content-div;
+  height:180px;
+  h2{
+    .slide-title;
+  }
+  @media (max-width: 900px) {
+    height:80px;
+    h2{
+      .slide-title-900;
+    }
+  }
+  @media (max-width: 750px) {
+    .slide-content-div-750;
+    height: 90px;
+    h2{
+      .slide-title-750;
+      line-height: 30px;
+    }
+  }
+}
+#eb-sc-content-div {
+  .slide-content-div;
+  height:230px;
+  h2{
+    .slide-title;
+    .slide-title-padding;
+  }
+  @media (max-width: 900px) {
+    height:180px;
+    h2{
+      .slide-title-900;
+    }
+  }
+  @media (max-width: 750px) {
+    .slide-content-div-750;
+    height: 170px;
+    h2{
+      .slide-title-750;
+    }
+  }
+}
+#eb-staff-content-div{
+  .slide-content-div;
+  padding:0 30px;
+  h2{
+    .slide-title;
+    a{
+      color: #2d251a;
+    }
+  }
+  @media (max-width: 1024px) {
+    padding:0 10px;
+  }
+  @media (max-width: 900px) {
+    height: 130px;
+    padding:0 55px;
+    h2{
+      .slide-title-900;
+    }
+  }
+  @media (max-width: 750px) {
+    .slide-content-div-750;
+    height: 130px;
+    h2{
+      .slide-title-750;
+    }
+  }
+}
+#eb-gp-content-div {
+  .slide-content-div;
+  height:230px;
+  h2{
+    .slide-title;
+    .slide-title-padding;
+    color:#fff6a8;
+  }
+  @media (max-width: 900px) {
+    height:160px;
+    h2{
+      .slide-title-900;
+    }
+  }
+  @media (max-width: 750px) {
+    .slide-content-div-750;
+    height: 150px;
+    h2{
+      .slide-title-750;
+    }
+  }
+}
+.eb-bk-title, .eb-bk-stitle, .eb-bk-link{
+  font-family: 'Roboto Bold', Verdana, Helvetica, Arial, sans-serif;
+  padding: 10px;
+  color:@font_color;
+}
+.eb-oa{
+  .eb-bk-title;
+  color:@bodyfontcolor;
+}
+@media (min-width: 1025px) {
+  .uk-slider-container{
+    width:90%;
+    margin:0 auto;
+  }
+}
+/*******************End - Slideshow***************************************************/
+/*******************START ACCORDIONS*************************************************/
+.ltu-faq{
+  .uk-accordion-title{
+    background-color:#d14124;
+    color:@bodyfontcolor;
+    margin-bottom:1px;
+    border:solid 1px #d14124;
+    .uk-active{
+      background-color:#e87722;
+      color:@bodyfontcolor;
+      margin-bottom:0;
+      border:solid 1px #e87722;
+      border-radius:4px 4px 0 0;
+    }
+  }
+  .uk-accordion-content{
+    background-color:#F5F2E4;
+    border:solid 1px #ddd;
+    border-radius:0 0 4px 4px;
+    color:@font_color;
+  }
+}
+/*********************END ACCORDIONS*************************************************/

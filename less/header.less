@@ -1,0 +1,84 @@
+.ltu-navbar{
+  //background:#F5F2E4 url(images/la-trobe-navbar.jpg) repeat-x 0 0;
+  background:#ffffff;
+
+  .uk-navbar-brand {
+    min-width: 320px;
+    height:84px;
+    background-color: #ffffff;
+  }
+
+  .uk-navbar-brand img{
+    max-width: 250px;
+  }
+
+  /***************************START - LTU OLD NAVBAR*************************************************
+  #ltu-navbar-nav{
+    height:82px;
+
+    li{
+      height: inherit;
+      font-family: 'Roboto Bold', sans-serif;
+    }
+
+    a {
+      background: transparent url(images/chevron-sm-orange.png) no-repeat 15px 35px;
+      color: #63513D;
+      display: block;
+      padding: 30px 26px;
+      text-decoration: none;
+      transition: padding 0.6s;
+      height: inherit;
+      font-family: 'Roboto Bold', sans-serif;
+      border: none;
+    }
+    a{
+      background-position: 25px 34px;
+      padding:30px 40px;
+      line-height:inherit;
+    }
+    li:hover a{
+      border:none;
+      color:#d34426;
+    }
+    .current_site a {
+      background: url(images/current-audience-ltu.png) no-repeat 20px 22px rgba(255,255,255,0.6);
+      border-top: 4px solid #D34426;
+      color: #242424;
+      padding-top: 26px!important;
+      text-indent: 26px;
+      height: inherit;
+    }
+    .current_site:hover a{
+      border-top: 4px solid #D34426;
+      color:#242424;
+    }
+    .current_site a {
+      background-position: 30px 22px;
+    }
+    @media (max-width: 900px) {
+      display: none;
+    }
+  }
+  ***************************END - LTU OLD NAVBAR*************************************************/
+  /*@media (max-width: 900px) {
+      background:#ffffff;
+    }*/
+}
+.ltu-breadcrumb {
+  background-color: @latrobe_footer_bgcolor;
+  margin: 0;
+  padding: 10px;
+  color: @bodyfontcolor;
+  font-family: 'Roboto', Verdana, Helvetica, Arial, sans-serif;
+  a {
+    color: #f5f2e4;
+  }
+  .uk-active {
+    color: #e86a1d;
+  }
+  li:nth-child(n+2)::before {
+    content: ">";
+    font-weight: bold;
+  }
+}

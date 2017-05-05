@@ -1,0 +1,38 @@
+{
+  "name": "la-trobe-ebureau",
+  "version": "1.0.0",
+  "description": "The La Trobe eBureau publishes engaging, high quality, open-access etextbooks.",
+  "main": "index.html",
+  "dependencies": {
+    "uikit": "^2.27.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-less": "^1.4.1",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "La",
+    "Trobe",
+    "eBureau",
+    "La",
+    "Trobe",
+    "eBureau",
+    "etextbooks",
+    "Library",
+    "Latrobe",
+    "University",
+    "Open",
+    "Access",
+    "eLearning",
+    "resources"
+  ],
+  "author": "Sai Nagamalla",
+  "license": "ISC"
+}

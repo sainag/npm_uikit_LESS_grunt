@@ -1,0 +1,27 @@
+@latrobe_footer_bgcolor:#2d251a;
+
+footer{
+  background-color:@latrobe_footer_bgcolor;
+  min-height:300px;
+  color:@bodyfontcolor;
+  font-weight:400;
+  font-family: 'Roboto', Verdana, Helvetica, Arial, sans-serif;
+
+  .uk-panel-title{
+    color:#ff9d23;
+    font-family: 'Roboto', sans-serif;
+  }
+  ul>li{
+    padding-bottom:2%;
+  }
+  a,
+  a:hover{
+    color:@bodyfontcolor;
+  }
+  @media (max-width: 750px) {
+    .uk-grid .fgrid2,
+    .uk-grid .fgrid3{
+  	  padding-left:0;
+    }
+  }
+}
