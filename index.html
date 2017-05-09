@@ -103,7 +103,7 @@
                   </div>
                 </div>
               </li>
-              <li data-slider-slide="0" class="uk-width-1-1 uk-text-center uk-grid uk-margin-remove clrmargin-left">
+              <li data-slider-slide="0" class="uk-width-1-1 uk-text-center uk-grid uk-margin-remove clrmargin-left eb-oa-slide">
                 <div class="uk-width-medium-6-10 uk-container-center uk-padding-remove">
                 <a draggable="false" href="#" title="">
                   <img draggable="false" src="images/ebureau-openaccess.png" alt="La Trobe eBureau promotes open access" title="La Trobe eBureau promotes open access">
@@ -121,10 +121,15 @@
           <a href="#" class="uk-slidenav uk-slidenav-contrast uk-slidenav-next" data-uk-slider-item="next" draggable="false"></a>
         </div>
         <br>
-        <div class="uk-accordion" data-uk-accordion="{showfirst:false}" id="about-ebureau">
-          <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder about_ebureau">ABOUT LA TROBE eBUREAU</h3>
-          <div class="uk-accordion-content">
-            <p>The La Trobe eBureau publishes engaging, high quality, open-access etextbooks. The mission of the eBureau is: to elevate La Trobe University to be a major player in open access education; to promote the expertise and scholarship of La Trobe academics; and to reduce resource  costs for students by providing open access textbooks, available anytime and anywhere.</p>
+        <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder about_ebureau" onclick="$('#about-ebureau').slideToggle();">ABOUT LA TROBE eBUREAU</h3>
+        <div class="uk-grid-container" style="display:none;" id="about-ebureau">
+          <div class="uk-container uk-width-1-1">
+            The La Trobe eBureau publishes engaging, high quality, open-access etextbooks.<br>
+            The mission of the eBureau is to:
+              <ul class="uk-margin-top-remove">
+                <li>invest in the development of quality open access resources to support online and blended learning,</li>
+                <li>elevate  La Trobe University to become a major player in open access education; promoting the expertise and scholarship of La Trobe academics and to reducing resource costs for students by providing open access textbooks, available anytime anywhere.</li>
+              </ul>
             <p>All eBureau  resources are written by La Trobe University academics for La Trobe courses and subjects. The La Trobe eBureau provides academics with editing, design, copyright and online publishing services.
             Academics interested in developing open access etextbooks to support the curriculum should contact <a href="mailto:library@latrobe.edu.au">Fiona Salisbury</a> or
             <a href="mailto:library@latrobe.edu.au">Kathy Russell </a>to discuss their publishing needs.</p>
@@ -180,19 +185,6 @@
             </div>
           </div>
         </div>
-        <!--<hr class="uk-margin-bottom-remove">
-        <div class="uk-accordion" data-uk-accordion="">
-          <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder">CONTACT</h3>
-          <div class="uk-accordion-content">
-            <div class="uk-grid" data-uk-grid-margin="">
-              <div class="uk-width-medium-1-1 uk-text-center">
-                  <h2 class="uk-margin-bottom-remove uk-text-primary">Kathy Russell</h2>
-                  <p class="uk-text-large uk-margin-top-remove uk-margin-bottom-remove">Coordinator, Business Services (Library)</p>
-                  <a class="uk-text-large" href="mailto:library@latrobe.edu.au">library@latrobe.edu.au</a>
-              </div>
-            </div>
-          </div>
-        </div>-->
         <hr class="uk-margin-bottom-remove">
         <div class="uk-accordion" data-uk-accordion="{showfirst:false}" id="contact-us">
           <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder">CONTACT</h3>
@@ -241,8 +233,8 @@
           </div>
         </div>
         <hr class="uk-margin-bottom-remove uk-margin-top-remove">
-        <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder">FAQ</h3>
-        <div class="uk-grid uk-container-center uk-align ltu-faq" id="faq">
+        <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder" onclick="toggle_div('faq')">FAQ</h3>
+        <div class="uk-grid uk-container-center uk-align ltu-faq" style="display:none;" id="faq" >
           <div class="uk-container uk-width-1-1">
             <div class="uk-accordion" data-uk-accordion="{showfirst:false}">
               <h3 class="uk-accordion-title">What is eBureau?<i class="uk-icon-plus uk-align-right"></i></h3>
@@ -273,12 +265,12 @@
             <div class="uk-width-medium-1-3 fgrid2">
               <div class="uk-panel">
               	<h3 class="uk-panel-title">
-                	E EBUREAU
+                	EBUREAU
                 </h3>
                 <ul class="uk-list">
                   <li><a href="index.html">Home</a></li>
-                  <li><a href="#about-ebureau" onClick="javascript:$('#about-ebureau h3').trigger('click');">About</a></li>
-                  <li><a href="#faq">FAQ</a></li>
+                  <li><a href="#about-ebureau" onClick="javascript:toggle_div('about-ebureau')">About</a></li>
+                  <li><a href="#faq" onClick="javascript:toggle_div('faq')">FAQ</a></li>
                 </ul>
               </div>
             </div>
@@ -306,45 +298,13 @@
 <script type="text/javascript" src="//webstat.latrobe.edu.au/jscripts/latrobe_lib.js"></script>
 <!-- End Webstat Code -->
 <!-- Google Analytics -->
+<script src="js/google-analytics.js"></script>
+<script src="js/main.min.js"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-91236944-1', 'auto');
-  ga('send', 'pageview');
-
-  $(".view_book").on('click',function(){
-    try{ ga('send', 'event', $(this).attr('title'),'Click',$(this).html());}
-    catch(e){}
-  });
-
-  $(".about_ebureau" ).on( "click", function( event, ui ) {
-	try{ ga('send', 'event', 'About eBureau','Click','About eBureau');}
-	catch(e){}
-  });
-  $(".about_ebureau" ).on( "click", function( event, ui ) {
-	try{ ga('send', 'event', 'About eBureau','Click','About eBureau');}
-	catch(e){}
-  });
-  $(".uk-slidenav-next" ).on( "click", function( event, ui ) {
-	try{ ga('send', 'event', 'Slide Show Next','Click','Slide Show');}
-	catch(e){}
-  });
-
-  $(".uk-slidenav-previous" ).on( "click", function( event, ui ) {
-	try{ ga('send', 'event', 'Slide Show Previous','Click','Slide Show');}
-	catch(e){}
-  });
   $(document).ready(function(e) {
-    $(".ltu-faq .uk-accordion").on('toggle.uk.accordion',function(event, active, toggle, content){
-	  $(".ltu-faq .uk-accordion .uk-accordion-title i").addClass('uk-icon-plus').removeClass('uk-icon-minus');
-	  if($(toggle).attr('class') == 'uk-accordion-title uk-active'){
-	    $(toggle).children().addClass('uk-icon-minus').removeClass('uk-icon-plus');
-	  }
-	});
+    toggle_accordion_icons();
+    toggle_about();
   });
 </script>
-    </body>
+</body>
 </html>

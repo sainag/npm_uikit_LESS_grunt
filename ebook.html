@@ -15,30 +15,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/slideshow.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/2.27.2/js/components/accordion.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
-        <script type="text/javascript">
-        $(document).ready(function(){
-          show_book();
-        });
-        function show_book(req_book){
-          $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution").hide();
-          if(typeof req_book=='undefined'){
-            var url = window.location.href;
-            var div = url.split("#"); var req_book=div[1];
-            if(typeof req_book!='undefined'){
-              $("#"+req_book).show();
-            }
-            else {
-              $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution").show();
-            }
-          }
-          else{
-            $("#"+req_book).show();
-          }
-          setTimeout(function(){
-            $("body").animate({scrollTop:0}, 'slow');
-          },100);
-        }
-      </script>
     </head>
     <body>
       <div class="uk-container uk-container-center uk-padding-remove b_container">
@@ -235,8 +211,8 @@
           </div>
         </div>
         <hr class="uk-margin-bottom-remove uk-margin-top-remove">
-        <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder">FAQ</h3>
-        <div class="uk-grid uk-container-center uk-align ltu-faq" id="faq">
+        <h3 class="uk-accordion-title uk-text-center ebcolour clrbgcolour clrborder" onclick="$('#faq').slideToggle();">FAQ</h3>
+        <div class="uk-grid uk-container-center uk-align ltu-faq" style="display:none;" id="faq" >
           <div class="uk-container uk-width-1-1">
             <div class="uk-accordion" data-uk-accordion="{showfirst:false}">
               <h3 class="uk-accordion-title">What is eBureau?<i class="uk-icon-plus uk-align-right"></i></h3>
@@ -267,12 +243,12 @@
             <div class="uk-width-medium-1-3 fgrid2">
               <div class="uk-panel">
               	<h3 class="uk-panel-title">
-                	E EBUREAU
+                	EBUREAU
                 </h3>
                 <ul class="uk-list">
                   <li><a href="index.html">Home</a></li>
-                  <li><a href="#about-ebureau" onClick="javascript:$('#about-ebureau h3').trigger('click');">About</a></li>
-                  <li><a href="#faq">FAQ</a></li>
+                  <li><a href="index.html#about-ebureau" onClick="javascript:$('#about-ebureau').slideToggle();">About</a></li>
+                  <li><a href="#faq" onClick="javascript:$('#faq').slideToggle();">FAQ</a></li>
                 </ul>
               </div>
             </div>
@@ -300,19 +276,10 @@
 <script type="text/javascript" src="//webstat.latrobe.edu.au/jscripts/latrobe_lib.js"></script>
 <!-- End Webstat Code -->
 <!-- Google Analytics -->
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-91236944-1', 'auto');
-  ga('send', 'pageview');
-
-  $(".download_pdf, .view_book").on('click',function(){
-    try{ ga('send', 'event', $(this).attr('title'),'Click',$(this).html());}
-    catch(e){}
-  });
+<script src="js/google-analytics.js"></script>
+<script src="js/main.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){ show_book();});
 </script>
-    </body>
+</body>
 </html>

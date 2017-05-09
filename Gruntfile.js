@@ -4,15 +4,21 @@ module.exports = function(grunt){
   //Project and task configuration
   grunt.initConfig({
     pkg:grunt.file.readJSON('package.json'),
-    /*uglify:{
+    concat:{
+      js:{
+        src: ['js/functions.js','js/google-analytics.js'],
+        dest: 'js/main.js'
+      }
+    },
+    uglify:{
       options:{
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd")%>  \n' - this need be used before \n '* /''
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd")%>  */\n'
       },
       build:{
-        src: 'style.css',
-        dest: 'style.min.css'
+        src: 'js/main.js',
+        dest: 'js/main.min.js'
       }
-    }*/
+    },
     less:{
       development:{
         options: {
@@ -24,6 +30,9 @@ module.exports = function(grunt){
           'css/main.css':['less/main.less'] /*source:desintation*/
         }
       }
+    },
+    phpunit:{
+      
     },
     /********ftpush not working*****************/
     /*ftpush:{
@@ -53,11 +62,13 @@ module.exports = function(grunt){
   });
 
   //loading grunt plugins
-  //grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-phpunit');
   //grunt.loadNpmTasks('grunt-ftpush');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   //Default task(s).
-  grunt.registerTask('default', ['less']);
+  grunt.registerTask('default', ['less','concat','uglify','watch']);
 };
