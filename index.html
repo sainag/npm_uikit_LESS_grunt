@@ -5,7 +5,8 @@
         <meta charset="utf-8">
         <meta name="description" content="La Trobe University eBureau publishes high quality open access etextbooks. La Trobe University eBureau resources are written by La Trobe academics for La Trobe courses and subjects.">
         <meta name="keywords" content="La Trobe, eBureau, La Trobe eBureau, eTextbooks, Library, Latrobe Library, Open Access, eLearning Resources">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/angular/angular.min.js"></script>
         <link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.almost-flat.min.css" />
         <link rel="stylesheet" href="node_modules/uikit/dist/css/components/autocomplete.almost-flat.min.css" />
         <link rel="stylesheet" href="node_modules/uikit/dist/css/components/slider.almost-flat.min.css" />
@@ -22,7 +23,7 @@
         <script src="node_modules/uikit/dist/js/components/autocomplete.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body ng-app="la-trobe-ebureau">
       <div class="uk-container uk-container-center uk-padding-remove b_container">
         <nav class="uk-navbar ltu-navbar">
           <a href="http://www.latrobe.edu.au" class="uk-navbar-brand uk-padding-remove">
@@ -189,28 +190,36 @@
               <div class="uk-width-medium-2-3 uk-row-first uk-padding-left-remove ebpadding-medium-left">
                 <div class="uk-panel uk-panel-header">
                   <h3 class="uk-panel-title">Tell us what you think</h3>
-                    <form class="uk-form uk-form-stacked">
+                    <form class="uk-form uk-form-stacked" ng-controller="contact-library" ng-submit="submit()" name="form" autocomplete="off">
                       <div class="uk-form-row">
                         <label class="uk-form-label">Your Name</label>
                         <div class="uk-form-controls">
-                          <input type="text" placeholder="" class="uk-width-1-1">
+                          <input type="text" placeholder="Your Name" class="uk-width-1-1" ng-model="name" name="name" required>
+                          <span class="uk-text-danger" ng-show="(form.$submitted || form.name.$touched) && form.name.$invalid">Name is required</span>
                         </div>
                       </div>
                       <div class="uk-form-row">
                         <label class="uk-form-label">Your Email</label>
                         <div class="uk-form-controls">
-                          <input type="text" placeholder="" class="uk-width-1-1">
+                          <input type="email" placeholder="Your Email" class="uk-width-1-1" ng-model="email" name="email" required>
+                          <span class="uk-text-danger" ng-show="(form.$submitted || form.email.$touched) && form.email.$error.required">Email is required</span>
+                          <span class="uk-text-danger" ng-show="(form.$submitted || form.email.$touched) && form.email.$error.email">Invalid email</span>
                         </div>
                       </div>
                       <div class="uk-form-row">
                         <label class="uk-form-label">Your Message</label>
                         <div class="uk-form-controls">
-                          <textarea class="uk-width-1-1" id="form-h-t" cols="100" rows="9"></textarea>
+                          <textarea class="uk-width-1-1" cols="100" rows="9" ng-model="message" name="message" required ng-minlength="5" placeholder="Enter your message"></textarea>
+                          <span class="uk-text-danger" ng-show="(form.$submitted || form.message.$touched) && form.message.$invalid">Enter your message</span>
                         </div>
                       </div>
                       <div class="uk-form-row">
+                        <span class="uk-text-success uk-text-bold" ng-show="success">Thanks {{dname}} for sending us your thoughts.</span>
+                        <span class="uk-text-danger uk-text-bold" ng-show="failure">Sorry {{dname}}. Please try again.</span>
+                      </div>
+                      <div class="uk-form-row">
                         <div class="uk-form-controls">
-                          <button class="uk-button uk-button-primary">Submit</button>
+                          <button class="uk-button uk-button-primary" type="submit" ng-disabled="form.name.$invalid || form.email.$invalid || form.message.$invalid">Submit</button>
                         </div>
                       </div>
                     </form>
@@ -298,6 +307,7 @@
 <!-- Google Analytics -->
 <script src="js/google-analytics.js"></script>
 <script src="js/main.min.js"></script>
+<script src="js/angular-functions.js"></script>
 <script>
   $(document).ready(function(e) {
     toggle_accordion_icons();

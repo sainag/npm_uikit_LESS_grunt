@@ -38,7 +38,8 @@ module.exports = function(grunt){
       options:{
         bin: 'php/vendor/bin/phpunit',
         bootstrap:'php/email.php',
-        color:true
+        color:true,
+        testdox:true
       }
     },
     /********ftpush not working*****************/
