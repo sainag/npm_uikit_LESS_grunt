@@ -32,7 +32,14 @@ module.exports = function(grunt){
       }
     },
     phpunit:{
-      
+      classes:{
+        dir:'tests/php'
+      },
+      options:{
+        bin: 'php/vendor/bin/phpunit',
+        bootstrap:'php/email.php',
+        color:true
+      }
     },
     /********ftpush not working*****************/
     /*ftpush:{

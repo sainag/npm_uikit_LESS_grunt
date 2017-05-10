@@ -4,5 +4,8 @@ pdf/
 #node modules
 node_modules/
 
+#composer modules
+php/vendor/
+
 #FTP username and passwords
 .ftppass

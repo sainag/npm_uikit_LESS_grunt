@@ -23,7 +23,7 @@ final class Email{
       throw new InvalidArgumentException(
         sprintf(
           '"%s" is not a valid email address', $email
-        );
+        )
       );
     }
   }
