@@ -7,9 +7,5 @@ node_modules/
 #composer modules
 php/vendor/
 
-#tests
-tests/
-tests/php/emailTest.php
-
 #FTP username and passwords
 .ftppass
