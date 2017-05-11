@@ -22,6 +22,12 @@
         <script src="node_modules/uikit/dist/js/components/accordion.min.js"></script>
         <script src="node_modules/uikit/dist/js/components/autocomplete.min.js"></script>
         <link rel="stylesheet" href="css/main.css">
+        <script>
+          $(document).ready(function(e) {
+            toggle_accordion_icons();
+            toggle_about();
+          });
+        </script>
     </head>
     <body ng-app="la-trobe-ebureau">
       <div class="uk-container uk-container-center uk-padding-remove b_container">
@@ -308,11 +314,5 @@
 <script src="js/google-analytics.js"></script>
 <script src="js/main.min.js"></script>
 <script src="js/angular-functions.js"></script>
-<script>
-  $(document).ready(function(e) {
-    toggle_accordion_icons();
-    toggle_about();
-  });
-</script>
 </body>
 </html>
