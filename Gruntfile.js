@@ -42,6 +42,37 @@ module.exports = function(grunt){
         testdox:true
       }
     },
+    'sftp-deploy':{
+      build:{
+        auth:{
+          host:'libappdev.latrobe.edu.au',
+          port:6022,
+          authKey:'snkey'
+        },
+        src: 'C:/wamp/www/ebureau',
+        dest:'/data/web/public_html/ebureau',
+        exclusions: ['C:/wamp/www/ebureau/**/Thumbs.db','tests','node_modules','C:/wamp/www/ebureau/php/vendor'],
+        serverSep: '/',
+        localSep: '/',
+        concurrency: 4,
+        progress:true
+      }
+    },
+    // /*******Source code publishing*****************/
+    // scp:{
+    //   options:{
+    //     host:'libappdev.latrobe.edu.au',
+    //     port:6022,
+    //     username:'web',
+    //   },
+    //   libappdev: {
+    //     files:[{
+    //       cwd: 'tests',
+    //       src:'*/*',
+    //       dest:'/data/web/public_html/ebureau'
+    //     }]
+    //   }
+    // },
     /********ftpush not working*****************/
     /*ftpush:{
       build:{
@@ -75,6 +106,8 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-phpunit');
   //grunt.loadNpmTasks('grunt-ftpush');
+  //grunt.loadNpmTasks('grunt-scp');
+  grunt.loadNpmTasks('grunt-sftp-deploy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   //Default task(s).

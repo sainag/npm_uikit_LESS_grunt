@@ -18,7 +18,8 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ftpush": "^0.3.3",
     "grunt-phpunit": "^0.3.6",
-    "grunt-scp": "^0.1.10"
+    "grunt-scp": "^0.1.10",
+    "grunt-sftp-deploy": "^0.2.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
