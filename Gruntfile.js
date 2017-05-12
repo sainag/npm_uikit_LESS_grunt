@@ -42,6 +42,15 @@ module.exports = function(grunt){
         testdox:true
       }
     },
+    phpmd:{
+      applicaiton:{
+        dir:'php/email.php'
+      },
+      options:{
+        bin: 'php/vendor/bin/phpmd',
+        rulesets:'codesize,unusedcode,naming'
+      }
+    },
     'sftp-deploy':{
       build:{
         auth:{
@@ -105,6 +114,7 @@ module.exports = function(grunt){
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-phpunit');
+  grunt.loadNpmTasks('grunt-phpmd');
   //grunt.loadNpmTasks('grunt-ftpush');
   //grunt.loadNpmTasks('grunt-scp');
   grunt.loadNpmTasks('grunt-sftp-deploy');
