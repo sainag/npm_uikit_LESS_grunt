@@ -23,7 +23,7 @@ function toggle_accordion_icons(){
   });
 }
 function show_book(req_book){
-  $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution").hide();
+  $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution, #keyconcepts").hide();
   if(typeof req_book=='undefined'){
     var url = window.location.href;
     var div = url.split("#"); var req_book=div[1];
