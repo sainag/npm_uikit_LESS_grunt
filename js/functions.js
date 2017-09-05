@@ -23,7 +23,7 @@ function toggle_accordion_icons(){
   });
 }
 function show_book(req_book){
-  $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution, #keyconcepts").hide();
+  $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution, #keyconcepts, #victorian").hide();
   if(typeof req_book=='undefined'){
     var url = window.location.href;
     var div = url.split("#"); var req_book=div[1];
@@ -31,7 +31,7 @@ function show_book(req_book){
       $("#"+req_book).show();
     }
     else {
-      $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution").show();
+      $("#howtodoscience, #gallipoli, #caesar, #frenchrevolution, #keyconcepts, #victorian").show();
     }
   }
   else{
